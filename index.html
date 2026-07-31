@@ -3,36 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Annual Tech Summit 2026</title>
+  <title>The Bayeux Tapestry Musical — Live in Guernsey</title>
   <style>
-    /* Basic Page Styles */
+    /* Theme Colors & Global Styles */
+    :root {
+      --primary: #1b2a4a; /* Deep Medieval Navy */
+      --accent: #d4af37;  /* Gold */
+      --bg-light: #f4f1ea;/* Parchment tone */
+      --text: #2c2c2c;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Georgia, serif;
       line-height: 1.6;
-      color: #333;
+      color: var(--text);
       margin: 0;
       padding: 0;
-      background-color: #f8f9fa;
+      background-color: var(--bg-light);
     }
 
     /* Header / Hero Section */
     header {
-      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-      color: white;
+      background: linear-gradient(135deg, var(--primary), #0f172a);
+      color: #ffffff;
       text-align: center;
       padding: 60px 20px;
+      border-bottom: 5px solid var(--accent);
     }
     header h1 {
       margin: 0 0 10px 0;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
+      color: var(--accent);
+      letter-spacing: 1px;
     }
     header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
+      font-size: 1.25rem;
+      opacity: 0.95;
       margin: 0;
     }
 
-    /* Container */
+    /* Main Container */
     .container {
       max-width: 800px;
       margin: 0 auto;
@@ -48,34 +58,46 @@
     }
     .detail-card {
       background: white;
-      padding: 20px;
+      padding: 22px;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      border-top: 4px solid #3b82f6;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+      border-top: 4px solid var(--accent);
     }
     .detail-card h3 {
       margin-top: 0;
-      color: #1e3a8a;
+      color: var(--primary);
+    }
+
+    /* Content Section */
+    .about-section {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+    }
+    .about-section h2 {
+      color: var(--primary);
+      margin-top: 0;
     }
 
     /* Form Container */
     .form-container {
       background: white;
-      padding: 20px;
+      padding: 30px 20px;
       border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       text-align: center;
     }
-    .form-container iframe {
-      width: 100%;
-      border: 0;
-      min-height: 600px;
+    .form-container h2 {
+      color: var(--primary);
+      margin-top: 0;
     }
 
     /* Footer */
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 25px;
       font-size: 0.9rem;
       color: #666;
     }
@@ -85,8 +107,8 @@
 
   <!-- HERO SECTION -->
   <header>
-    <h1>Annual Tech Summit 2026</h1>
-    <p>Join us for a day of inspiring talks, workshops, and networking.</p>
+    <h1>The Bayeux Tapestry Musical</h1>
+    <p>A spectacular musical performance bringing 1066 & Norman history to life in Guernsey</p>
   </header>
 
   <div class="container">
@@ -95,44 +117,44 @@
     <div class="details-grid">
       <div class="detail-card">
         <h3>📅 Date & Time</h3>
-        <p>Saturday, October 24, 2026<br>10:00 AM – 4:00 PM</p>
+        <p><strong>Saturday, November 14, 2026</strong><br>Doors open: 7:00 PM<br>Show starts: 7:30 PM</p>
       </div>
       <div class="detail-card">
-        <h3>📍 Location</h3>
-        <p>Innovation Center Auditorium<br>123 Main St, Tech City</p>
+        <h3>📍 Venue</h3>
+        <p><strong>Beau Séjour Theatre</strong><br>St Peter Port, Guernsey</p>
       </div>
       <div class="detail-card">
-        <h3>🎟️ Admission</h3>
-        <p>Free (RSVP required)<br>Lunch & refreshments provided</p>
+        <h3>🎟️ Tickets</h3>
+        <p><strong>Free Admission</strong><br>Advance RSVP required due to seating limits</p>
       </div>
     </div>
 
     <!-- ABOUT SECTION -->
-    <section style="margin-bottom: 40px;">
-      <h2>About the Event</h2>
-      <p>Whether you're a beginner or an experienced developer, this event is designed to give you hands-on experience and actionable insights. Meet industry experts and build your community!</p>
+    <section class="about-section">
+      <h2>About the Show</h2>
+      <p>Experience the epic tale of the 1066 Norman Conquest like never before! <strong>The Bayeux Tapestry Musical</strong> weaves dramatic live music, historical storytelling, and theatrical performance to recreate the legendary scenes embroidered in the famous tapestry.</p>
+      <p>Join us in Guernsey for an unforgettable evening celebrating our island's unique medieval connection to Normandy and British history.</p>
     </section>
 
     <!-- GOOGLE FORM EMBED SECTION -->
     <div class="form-container">
-      <h2>Register to Attend</h2>
-      <p>Fill out the short form below to secure your spot.</p>
+      <h2>Reserve Your Seats</h2>
+      <p>Please fill out the form below to register for tickets.</p>
       
-      <!-- REPLACE THE IFRAME BELOW WITH YOUR COPIED GOOGLE FORM EMBED CODE -->
+      <!-- PASTE YOUR GOOGLE FORM IFRAME CODE DIRECTLY BELOW -->
       <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfDUMMY_GOOGLE_FORM_ID/viewform?embedded=true" 
               width="100%" 
-              height="600" 
+              height="650" 
               frameborder="0" 
               marginheight="0" 
-              marginwidth="0">Loading…</iframe>
+              marginwidth="0">Loading registration form…</iframe>
     </div>
 
   </div>
 
   <footer>
-    <p>© 2026 Tech Summit Team • Hosted on GitHub Pages</p>
+    <p>© 2026 Guernsey Bayeux Tapestry Musical Committee • Hosted on GitHub Pages</p>
   </footer>
 
 </body>
 </html>
- 
