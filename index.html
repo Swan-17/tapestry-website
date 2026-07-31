@@ -4,157 +4,108 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Bayeux Tapestry Musical — Live in Guernsey</title>
+  
+  <!-- Out-of-the-Box Styling (Pico CSS) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  
+  <!-- Custom Color Tweaks -->
   <style>
-    /* Theme Colors & Global Styles */
     :root {
-      --primary: #1b2a4a; /* Deep Medieval Navy */
-      --accent: #d4af37;  /* Gold */
-      --bg-light: #f4f1ea;/* Parchment tone */
-      --text: #2c2c2c;
+      --pico-primary: #1b2a4a; /* Medieval Navy */
+      --pico-primary-background: #1b2a4a;
+      --pico-primary-underline: #d4af37; /* Gold Accent */
     }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Georgia, serif;
-      line-height: 1.6;
-      color: var(--text);
-      margin: 0;
-      padding: 0;
-      background-color: var(--bg-light);
-    }
-
-    /* Header / Hero Section */
-    header {
-      background: linear-gradient(135deg, var(--primary), #0f172a);
-      color: #ffffff;
+    header.hero {
       text-align: center;
-      padding: 60px 20px;
-      border-bottom: 5px solid var(--accent);
-    }
-    header h1 {
-      margin: 0 0 10px 0;
-      font-size: 2.8rem;
-      color: var(--accent);
-      letter-spacing: 1px;
-    }
-    header p {
-      font-size: 1.25rem;
-      opacity: 0.95;
-      margin: 0;
-    }
-
-    /* Main Container */
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    /* Event Details Grid */
-    .details-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-bottom: 40px;
-    }
-    .detail-card {
-      background: white;
-      padding: 22px;
+      padding: 3rem 1rem;
+      background: linear-gradient(135deg, #1b2a4a, #0f172a);
+      color: white;
+      border-bottom: 4px solid #d4af37;
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.06);
-      border-top: 4px solid var(--accent);
+      margin-bottom: 2rem;
     }
-    .detail-card h3 {
-      margin-top: 0;
-      color: var(--primary);
+    header.hero h1 {
+      color: #d4af37;
+      margin-bottom: 0.5rem;
     }
-
-    /* Content Section */
-    .about-section {
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      margin-bottom: 40px;
-    }
-    .about-section h2 {
-      color: var(--primary);
-      margin-top: 0;
-    }
-
-    /* Form Container */
-    .form-container {
-      background: white;
-      padding: 30px 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    .grid-details article {
       text-align: center;
     }
-    .form-container h2 {
-      color: var(--primary);
-      margin-top: 0;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 25px;
-      font-size: 0.9rem;
-      color: #666;
+    .form-wrapper {
+      background: var(--pico-card-background-color);
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: var(--pico-card-box-shadow);
     }
   </style>
 </head>
 <body>
 
-  <!-- HERO SECTION -->
-  <header>
-    <h1>The Bayeux Tapestry Musical</h1>
-    <p>A spectacular musical performance bringing 1066 & Norman history to life in Guernsey</p>
-  </header>
-
-  <div class="container">
+  <main class="container">
     
-    <!-- EVENT DETAILS -->
-    <div class="details-grid">
-      <div class="detail-card">
+    <!-- HERO HEADER -->
+    <header class="hero">
+      <h1>The Bayeux Tapestry Musical</h1>
+      <p><strong>A spectacular performance bringing 1066 & Norman history to life in Guernsey</strong></p>
+    </header>
+
+    <!-- EVENT DETAILS CARDS -->
+    <section class="grid grid-details">
+      <article>
         <h3>📅 Date & Time</h3>
         <p><strong>Saturday, November 14, 2026</strong><br>Doors open: 7:00 PM<br>Show starts: 7:30 PM</p>
-      </div>
-      <div class="detail-card">
+      </article>
+
+      <article>
         <h3>📍 Venue</h3>
         <p><strong>Beau Séjour Theatre</strong><br>St Peter Port, Guernsey</p>
-      </div>
-      <div class="detail-card">
-        <h3>🎟️ Tickets</h3>
-        <p><strong>Free Admission</strong><br>Advance RSVP required due to seating limits</p>
-      </div>
-    </div>
+      </article>
 
-    <!-- ABOUT SECTION -->
-    <section class="about-section">
-      <h2>About the Show</h2>
-      <p>Experience the epic tale of the 1066 Norman Conquest like never before! <strong>The Bayeux Tapestry Musical</strong> weaves dramatic live music, historical storytelling, and theatrical performance to recreate the legendary scenes embroidered in the famous tapestry.</p>
-      <p>Join us in Guernsey for an unforgettable evening celebrating our island's unique medieval connection to Normandy and British history.</p>
+      <article>
+        <h3>🎟️ Admission</h3>
+        <p><strong>Free Entry</strong><br>Advance RSVP required via form below</p>
+      </article>
     </section>
 
-    <!-- GOOGLE FORM EMBED SECTION -->
-    <div class="form-container">
-      <h2>Reserve Your Seats</h2>
-      <p>Please fill out the form below to register for tickets.</p>
+    <!-- ABOUT SECTION -->
+    <article>
+      <h2>About the Show</h2>
+      <p>
+        Experience the epic story of the 1066 Norman Conquest like never before! 
+        <strong>The Bayeux Tapestry Musical</strong> weaves dramatic live music, historical storytelling, 
+        and theatrical performance to recreate the legendary scenes embroidered in the famous tapestry.
+      </p>
+      <p>
+        Join us in Guernsey for an unforgettable evening celebrating our island's unique medieval 
+        connection to Normandy and British history.
+      </p>
+    </article>
+
+    <!-- SIGNUP FORM SECTION -->
+    <section id="register">
+      <h2>Reserve Your Tickets</h2>
+      <p>Please fill out the quick registration form below to secure your seats.</p>
       
-      <!-- PASTE YOUR GOOGLE FORM IFRAME CODE DIRECTLY BELOW -->
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfDUMMY_GOOGLE_FORM_ID/viewform?embedded=true" 
-              width="100%" 
-              height="650" 
-              frameborder="0" 
-              marginheight="0" 
-              marginwidth="0">Loading registration form…</iframe>
-    </div>
+      <div class="form-wrapper">
+        <!-- PASTE YOUR GOOGLE FORM IFRAME BELOW -->
+        <iframe 
+          src="https://docs.google.com/forms/d/e/1FAIpQLSfDUMMY_GOOGLE_FORM_ID/viewform?embedded=true" 
+          width="100%" 
+          height="650" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0">
+          Loading registration form…
+        </iframe>
+      </div>
+    </section>
 
-  </div>
+    <!-- FOOTER -->
+    <footer style="text-align: center; margin-top: 3rem;">
+      <small>© 2026 Guernsey Bayeux Tapestry Musical Committee • Hosted on GitHub Pages</small>
+    </footer>
 
-  <footer>
-    <p>© 2026 Guernsey Bayeux Tapestry Musical Committee • Hosted on GitHub Pages</p>
-  </footer>
+  </main>
 
 </body>
 </html>
