@@ -119,11 +119,20 @@
       .about { padding: 6rem 1.25rem; }
       .about-inner { max-width: 980px; margin: 0 auto; display: grid; gap: 2.5rem; }
       .section-kicker { margin: 0 0 0.75rem; color: var(--gold); font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
-      .about h2, .media h2 { margin: 0; color: var(--navy); font-size: clamp(2rem, 5vw, 3.75rem); line-height: 1.1; text-wrap: balance; }
+      .about h2, .media h2, .resources h2, .contact h2 { margin: 0; color: var(--navy); font-size: clamp(2rem, 5vw, 3.75rem); line-height: 1.1; text-wrap: balance; }
       .about-copy { max-width: 660px; font-size: 1.15rem; }
       .about-copy p { margin: 0 0 1.25rem; }
       .about-copy p:last-child { margin-bottom: 0; }
       .dropcap::first-letter { float: left; margin: 0.06em 0.12em 0 0; color: var(--gold); font-family: "Cinzel", serif; font-size: 4.2rem; line-height: 0.8; }
+
+      .tapestry-band {
+        min-height: 260px;
+        background-color: rgba(7, 20, 38, 0.22);
+        background-image: url("public/images/tapestry-background.png");
+        background-blend-mode: multiply;
+        background-position: center;
+        background-size: cover;
+      }
 
       .media { padding: 5rem 1.25rem; background: var(--navy); color: var(--parchment); }
       .media-header { max-width: 760px; margin: 0 auto 2.5rem; text-align: center; }
@@ -135,8 +144,36 @@
       .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
       .media-card figcaption { padding: 1.25rem; color: var(--parchment); font-family: "Cinzel", serif; font-size: 0.9rem; letter-spacing: 0.06em; }
 
-      footer { padding: 2rem 1.25rem; background: var(--navy); color: var(--parchment); text-align: center; border-top: 1px solid rgba(199, 163, 75, 0.35); }
-      footer p { margin: 0; font-size: 0.9rem; }
+      .resources { padding: 5rem 1.25rem; background: var(--parchment); }
+      .resources-inner { max-width: 980px; margin: 0 auto; }
+      .resource-list { display: grid; gap: 1rem; margin-top: 2.5rem; }
+      .resource-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        background: var(--navy-light);
+        color: var(--parchment);
+        text-decoration: none;
+        transition: background-color 180ms ease, color 180ms ease;
+      }
+      .resource-link:hover, .resource-link:focus-visible { background: var(--gold); color: var(--navy); }
+      .resource-link:focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; }
+      .resource-source { display: block; color: var(--gold); font-family: "Cinzel", serif; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; }
+      .resource-link:hover .resource-source, .resource-link:focus-visible .resource-source { color: var(--navy); }
+      .resource-title { display: block; margin-top: 0.35rem; font-size: 1.08rem; font-weight: 600; }
+      .resource-arrow { flex: 0 0 auto; font-family: "Cinzel", serif; font-size: 1.5rem; }
+
+      .contact { padding: 5rem 1.25rem; background: var(--navy); color: var(--parchment); text-align: center; }
+      .contact-inner { max-width: 720px; margin: 0 auto; }
+      .contact h2 { color: var(--parchment); }
+      .contact-copy { margin: 1rem auto 0; font-size: 1.1rem; }
+      .email-link { display: inline-block; margin-top: 1.5rem; color: var(--gold); font-family: "Cinzel", serif; font-size: clamp(1rem, 4vw, 1.3rem); text-underline-offset: 0.35rem; }
+      .email-link:focus-visible { outline: 3px solid var(--gold); outline-offset: 5px; }
+
+      footer { padding: 0 1.25rem 2rem; background: var(--navy); color: var(--parchment); text-align: center; }
+      footer p { margin: 0; font-size: 0.9rem; opacity: 0.75; }
 
       @media (min-width: 760px) {
         .details { grid-template-columns: repeat(3, 1fr); }
@@ -144,12 +181,19 @@
         .media-grid { grid-template-columns: repeat(2, 1fr); }
       }
       @media (max-width: 560px) {
-        .hero { min-height: 74vh; }
-        .hero::before { inset: 0.7rem; }
-        .hero::after { inset: 1rem; }
-        .detail-card { padding: 1.5rem; }
-        .about { padding-block: 4rem; }
-        .media { padding-block: 4rem; }
+        .hero { min-height: 74vh; border-bottom: 0; }
+        .hero::before, .hero::after { display: none; }
+        .details-wrap { padding: 0 1.25rem 3rem; }
+        .details { gap: 0; border: 0; background: transparent; }
+        .detail-card { padding: 1.5rem 0; }
+        .detail-card + .detail-card { padding-top: 0.5rem; }
+        .about, .media, .resources, .contact { padding-block: 4rem; }
+        .tapestry-band { min-height: 180px; }
+        .media-grid { gap: 2rem; }
+        .media-card { border: 0; }
+        .media-card figcaption { padding-inline: 0; }
+        .resource-link { padding: 1.25rem; }
+        .resource-arrow { font-size: 1.25rem; }
       }
       @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     </style>
@@ -184,6 +228,8 @@
           </article>
         </div>
       </section>
+
+      <div class="tapestry-band" role="img" aria-label="Medieval embroidered scene inspired by the Bayeux Tapestry"></div>
 
       <section class="about" aria-labelledby="about-title">
         <div class="about-inner">
@@ -229,6 +275,38 @@
             </div>
             <figcaption>The Bayeux Tapestry Musical — Featured Recording II</figcaption>
           </figure>
+        </div>
+      </section>
+
+      <section class="resources" aria-labelledby="resources-title">
+        <div class="resources-inner">
+          <p class="section-kicker">Explore the history</p>
+          <h2 id="resources-title">Discover the Tapestry</h2>
+          <div class="resource-list">
+            <a class="resource-link" href="https://www.bayeuxmuseum.com/en/the-bayeux-tapestry/discover-the-bayeux-tapestry/what-is-the-bayeux-tapestry-about/" target="_blank" rel="noopener noreferrer">
+              <span>
+                <span class="resource-source">Bayeux Museum</span>
+                <span class="resource-title">What is the Bayeux Tapestry about?</span>
+              </span>
+              <span class="resource-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="resource-link" href="https://www.britishmuseum.org/blog/everything-you-need-know-about-bayeux-tapestry" target="_blank" rel="noopener noreferrer">
+              <span>
+                <span class="resource-source">British Museum</span>
+                <span class="resource-title">Everything you need to know about the Bayeux Tapestry</span>
+              </span>
+              <span class="resource-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" aria-labelledby="contact-title">
+        <div class="contact-inner">
+          <p class="section-kicker">Questions &amp; enquiries</p>
+          <h2 id="contact-title">Contact Us</h2>
+          <p class="contact-copy">We&apos;d love to hear from you about the production.</p>
+          <a class="email-link" href="mailto:testemail@gmail.com">testemail@gmail.com</a>
         </div>
       </section>
     </main>
