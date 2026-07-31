@@ -119,18 +119,21 @@
       .about { padding: 6rem 1.25rem; }
       .about-inner { max-width: 980px; margin: 0 auto; display: grid; gap: 2.5rem; }
       .section-kicker { margin: 0 0 0.75rem; color: var(--gold); font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
-      .about h2, .register h2 { margin: 0; color: var(--navy); font-size: clamp(2rem, 5vw, 3.75rem); line-height: 1.1; text-wrap: balance; }
+      .about h2, .media h2 { margin: 0; color: var(--navy); font-size: clamp(2rem, 5vw, 3.75rem); line-height: 1.1; text-wrap: balance; }
       .about-copy { max-width: 660px; font-size: 1.15rem; }
       .about-copy p { margin: 0 0 1.25rem; }
       .about-copy p:last-child { margin-bottom: 0; }
       .dropcap::first-letter { float: left; margin: 0.06em 0.12em 0 0; color: var(--gold); font-family: "Cinzel", serif; font-size: 4.2rem; line-height: 0.8; }
 
-      .register { padding: 5rem 1.25rem; background: var(--navy); color: var(--parchment); }
-      .register-header { max-width: 760px; margin: 0 auto 2.5rem; text-align: center; }
-      .register h2 { color: var(--parchment); }
-      .register-header p:last-child { margin: 1rem auto 0; color: var(--parchment); font-size: 1.1rem; }
-      .form-frame { max-width: 960px; margin: 0 auto; padding: 0.5rem; background: var(--gold); }
-      .form-frame iframe { display: block; width: 100%; height: 720px; border: 0; background: var(--parchment); }
+      .media { padding: 5rem 1.25rem; background: var(--navy); color: var(--parchment); }
+      .media-header { max-width: 760px; margin: 0 auto 2.5rem; text-align: center; }
+      .media h2 { color: var(--parchment); }
+      .media-header p:last-child { margin: 1rem auto 0; color: var(--parchment); font-size: 1.1rem; }
+      .media-grid { max-width: 1120px; margin: 0 auto; display: grid; gap: 1.5rem; }
+      .media-card { margin: 0; border: 1px solid var(--gold); background: var(--navy-light); }
+      .video-frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--ink); }
+      .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+      .media-card figcaption { padding: 1.25rem; color: var(--parchment); font-family: "Cinzel", serif; font-size: 0.9rem; letter-spacing: 0.06em; }
 
       footer { padding: 2rem 1.25rem; background: var(--navy); color: var(--parchment); text-align: center; border-top: 1px solid rgba(199, 163, 75, 0.35); }
       footer p { margin: 0; font-size: 0.9rem; }
@@ -138,6 +141,7 @@
       @media (min-width: 760px) {
         .details { grid-template-columns: repeat(3, 1fr); }
         .about-inner { grid-template-columns: 0.85fr 1.15fr; align-items: start; }
+        .media-grid { grid-template-columns: repeat(2, 1fr); }
       }
       @media (max-width: 560px) {
         .hero { min-height: 74vh; }
@@ -145,8 +149,7 @@
         .hero::after { inset: 1rem; }
         .detail-card { padding: 1.5rem; }
         .about { padding-block: 4rem; }
-        .register { padding-block: 4rem; }
-        .form-frame iframe { height: 780px; }
+        .media { padding-block: 4rem; }
       }
       @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     </style>
@@ -158,7 +161,7 @@
           <p class="eyebrow">One night in Guernsey · A story centuries in the making</p>
           <h1>The Bayeux Tapestry <span>Musical</span></h1>
           <p class="hero-copy">The epic of 1066, retold through soaring music, vivid storytelling and the power of live theatre.</p>
-          <a class="button" href="#register">Reserve your place</a>
+          <a class="button" href="#media">Watch &amp; listen</a>
         </div>
       </header>
 
@@ -195,18 +198,37 @@
         </div>
       </section>
 
-      <section class="register" id="register" aria-labelledby="register-title">
-        <div class="register-header">
-          <p class="section-kicker">Join us</p>
-          <h2 id="register-title">Reserve Your Place</h2>
-          <p>Complete the registration form below to secure your seats for this special performance.</p>
+      <section class="media" id="media" aria-labelledby="media-title">
+        <div class="media-header">
+          <p class="section-kicker">Hear the story</p>
+          <h2 id="media-title">Watch &amp; Listen</h2>
+          <p>Discover music and performance from The Bayeux Tapestry Musical.</p>
         </div>
-        <div class="form-frame">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSfDUMMY_GOOGLE_FORM_ID/viewform?embedded=true"
-            title="Ticket reservation form for The Bayeux Tapestry Musical"
-            loading="lazy"
-          >Loading registration form…</iframe>
+        <div class="media-grid">
+          <figure class="media-card">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/F8OPQ_28mdo"
+                title="The Bayeux Tapestry Musical — featured recording one"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <figcaption>The Bayeux Tapestry Musical — Featured Recording I</figcaption>
+          </figure>
+          <figure class="media-card">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/VCeydlr3Nww"
+                title="The Bayeux Tapestry Musical — featured recording two"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <figcaption>The Bayeux Tapestry Musical — Featured Recording II</figcaption>
+          </figure>
         </div>
       </section>
     </main>
