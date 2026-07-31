@@ -43,7 +43,11 @@
         align-items: center;
         justify-content: center;
         padding: 4rem 1.25rem;
-        background-color: var(--navy);
+        background-color: rgba(7, 20, 38, 0.9);
+        background-image: url("public/images/tapestry-background.png");
+        background-blend-mode: multiply;
+        background-position: center;
+        background-size: cover;
         color: var(--parchment);
         text-align: center;
         border-bottom: 5px solid var(--gold);
@@ -115,6 +119,9 @@
       .detail-card h2 { margin: 0.75rem 0 0.5rem; color: var(--gold); font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; }
       .detail-card p { margin: 0; }
       .detail-card strong { display: block; font-size: 1.15rem; font-weight: 600; }
+      .venue-link { display: inline-block; color: var(--gold); text-underline-offset: 0.3rem; }
+      .venue-link:hover { color: var(--parchment); }
+      .venue-link:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
 
       .about { padding: 6rem 1.25rem; }
       .about-inner { max-width: 980px; margin: 0 auto; display: grid; gap: 2.5rem; }
@@ -179,6 +186,7 @@
         .details { grid-template-columns: repeat(3, 1fr); }
         .about-inner { grid-template-columns: 0.85fr 1.15fr; align-items: start; }
         .media-grid { grid-template-columns: repeat(2, 1fr); }
+        .tapestry-band { min-height: 430px; background-attachment: fixed; }
       }
       @media (max-width: 560px) {
         .hero { min-height: 74vh; border-bottom: 0; }
@@ -219,7 +227,7 @@
           <article class="detail-card">
             <span class="detail-number">II</span>
             <h2>Venue</h2>
-            <p><strong>Beau Séjour Theatre</strong>St Peter Port, Guernsey</p>
+            <p><strong><a class="venue-link" href="https://www.google.com/maps/search/?api=1&amp;query=Beau+Sejour+Leisure+Centre+Guernsey" target="_blank" rel="noopener noreferrer">Beau Séjour Theatre ↗</a></strong>St Peter Port, Guernsey</p>
           </article>
           <article class="detail-card">
             <span class="detail-number">III</span>
