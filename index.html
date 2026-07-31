@@ -183,6 +183,7 @@
       footer p { margin: 0; font-size: 0.9rem; opacity: 0.75; }
 
       @media (min-width: 760px) {
+        .hero { min-height: 46vh; padding-block: 2rem; }
         .details { grid-template-columns: repeat(3, 1fr); }
         .about-inner { grid-template-columns: 0.85fr 1.15fr; align-items: start; }
         .media-grid { grid-template-columns: repeat(2, 1fr); }
@@ -193,7 +194,7 @@
         .hero::before, .hero::after { display: none; }
         .details-wrap { padding: 0 1.25rem 3rem; }
         .details { gap: 0; border: 0; background: transparent; }
-        .detail-card { padding: 1.5rem 0; }
+        .detail-card { padding: 1.5rem 0; text-align: center; }
         .detail-card + .detail-card { padding-top: 0.5rem; }
         .about, .media, .resources, .contact { padding-block: 4rem; }
         .tapestry-band { min-height: 180px; }
