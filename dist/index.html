@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071426" />
+    <meta
+      name="description"
+      content="The Bayeux Tapestry Musical — a spectacular evening of music, history and theatre in Guernsey."
+    />
+    <title>The Bayeux Tapestry Musical — Live in Guernsey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #071426;
+        --navy-light: #10233c;
+        --gold: #c7a34b;
+        --parchment: #f4ecd8;
+        --ink: #192131;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; background: var(--navy); }
+      body {
+        margin: 0;
+        background: var(--parchment);
+        color: var(--ink);
+        font-family: "Source Sans 3", sans-serif;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+      h1, h2, h3, .eyebrow, .button { font-family: "Cinzel", serif; }
+      a { color: inherit; }
+
+      .hero {
+        min-height: 82vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem 1.25rem;
+        background-color: var(--navy);
+        color: var(--parchment);
+        text-align: center;
+        border-bottom: 5px solid var(--gold);
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before, .hero::after {
+        content: "";
+        position: absolute;
+        inset: 1.25rem;
+        border: 1px solid rgba(199, 163, 75, 0.45);
+        pointer-events: none;
+      }
+      .hero::after { inset: 1.65rem; border-color: rgba(199, 163, 75, 0.18); }
+      .hero-inner { max-width: 920px; position: relative; z-index: 1; }
+      .eyebrow {
+        margin: 0 0 1.5rem;
+        color: var(--gold);
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+      }
+      .hero h1 {
+        max-width: 860px;
+        margin: 0 auto;
+        color: var(--parchment);
+        font-size: clamp(2.7rem, 8vw, 6.5rem);
+        line-height: 0.98;
+        letter-spacing: -0.035em;
+        text-wrap: balance;
+      }
+      .hero h1 span { display: block; color: var(--gold); }
+      .hero-copy {
+        max-width: 640px;
+        margin: 1.75rem auto 0;
+        color: var(--parchment);
+        font-size: clamp(1.05rem, 2vw, 1.3rem);
+        text-wrap: pretty;
+      }
+      .button {
+        display: inline-block;
+        margin-top: 2rem;
+        padding: 0.9rem 1.4rem;
+        background: var(--gold);
+        color: var(--navy);
+        border: 2px solid var(--gold);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: background-color 180ms ease, color 180ms ease;
+      }
+      .button:hover, .button:focus-visible { background: var(--navy); color: var(--gold); }
+      .button:focus-visible { outline: 3px solid var(--parchment); outline-offset: 4px; }
+
+      .details-wrap { background: var(--navy); padding: 0 1.25rem 4rem; }
+      .details {
+        max-width: 1120px;
+        margin: 0 auto;
+        display: grid;
+        gap: 1px;
+        background: var(--gold);
+        border: 1px solid var(--gold);
+      }
+      .detail-card { padding: 2rem; background: var(--navy-light); color: var(--parchment); }
+      .detail-number { color: var(--gold); font-family: "Cinzel", serif; font-size: 0.78rem; letter-spacing: 0.18em; }
+      .detail-card h2 { margin: 0.75rem 0 0.5rem; color: var(--gold); font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; }
+      .detail-card p { margin: 0; }
+      .detail-card strong { display: block; font-size: 1.15rem; font-weight: 600; }
+
+      .about { padding: 6rem 1.25rem; }
+      .about-inner { max-width: 980px; margin: 0 auto; display: grid; gap: 2.5rem; }
+      .section-kicker { margin: 0 0 0.75rem; color: var(--gold); font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+      .about h2, .media h2, .resources h2, .contact h2 { margin: 0; color: var(--navy); font-size: clamp(2rem, 5vw, 3.75rem); line-height: 1.1; text-wrap: balance; }
+      .about-copy { max-width: 660px; font-size: 1.15rem; }
+      .about-copy p { margin: 0 0 1.25rem; }
+      .about-copy p:last-child { margin-bottom: 0; }
+      .dropcap::first-letter { float: left; margin: 0.06em 0.12em 0 0; color: var(--gold); font-family: "Cinzel", serif; font-size: 4.2rem; line-height: 0.8; }
+
+      .tapestry-band {
+        min-height: 260px;
+        background-color: rgba(7, 20, 38, 0.22);
+        background-image: url("public/images/tapestry-background.png");
+        background-blend-mode: multiply;
+        background-position: center;
+        background-size: cover;
+      }
+
+      .media { padding: 5rem 1.25rem; background: var(--navy); color: var(--parchment); }
+      .media-header { max-width: 760px; margin: 0 auto 2.5rem; text-align: center; }
+      .media h2 { color: var(--parchment); }
+      .media-header p:last-child { margin: 1rem auto 0; color: var(--parchment); font-size: 1.1rem; }
+      .media-grid { max-width: 1120px; margin: 0 auto; display: grid; gap: 1.5rem; }
+      .media-card { margin: 0; border: 1px solid var(--gold); background: var(--navy-light); }
+      .video-frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--ink); }
+      .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+      .media-card figcaption { padding: 1.25rem; color: var(--parchment); font-family: "Cinzel", serif; font-size: 0.9rem; letter-spacing: 0.06em; }
+
+      .resources { padding: 5rem 1.25rem; background: var(--parchment); }
+      .resources-inner { max-width: 980px; margin: 0 auto; }
+      .resource-list { display: grid; gap: 1rem; margin-top: 2.5rem; }
+      .resource-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        background: var(--navy-light);
+        color: var(--parchment);
+        text-decoration: none;
+        transition: background-color 180ms ease, color 180ms ease;
+      }
+      .resource-link:hover, .resource-link:focus-visible { background: var(--gold); color: var(--navy); }
+      .resource-link:focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; }
+      .resource-source { display: block; color: var(--gold); font-family: "Cinzel", serif; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; }
+      .resource-link:hover .resource-source, .resource-link:focus-visible .resource-source { color: var(--navy); }
+      .resource-title { display: block; margin-top: 0.35rem; font-size: 1.08rem; font-weight: 600; }
+      .resource-arrow { flex: 0 0 auto; font-family: "Cinzel", serif; font-size: 1.5rem; }
+
+      .contact { padding: 5rem 1.25rem; background: var(--navy); color: var(--parchment); text-align: center; }
+      .contact-inner { max-width: 720px; margin: 0 auto; }
+      .contact h2 { color: var(--parchment); }
+      .contact-copy { margin: 1rem auto 0; font-size: 1.1rem; }
+      .email-link { display: inline-block; margin-top: 1.5rem; color: var(--gold); font-family: "Cinzel", serif; font-size: clamp(1rem, 4vw, 1.3rem); text-underline-offset: 0.35rem; }
+      .email-link:focus-visible { outline: 3px solid var(--gold); outline-offset: 5px; }
+
+      footer { padding: 0 1.25rem 2rem; background: var(--navy); color: var(--parchment); text-align: center; }
+      footer p { margin: 0; font-size: 0.9rem; opacity: 0.75; }
+
+      @media (min-width: 760px) {
+        .details { grid-template-columns: repeat(3, 1fr); }
+        .about-inner { grid-template-columns: 0.85fr 1.15fr; align-items: start; }
+        .media-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (max-width: 560px) {
+        .hero { min-height: 74vh; border-bottom: 0; }
+        .hero::before, .hero::after { display: none; }
+        .details-wrap { padding: 0 1.25rem 3rem; }
+        .details { gap: 0; border: 0; background: transparent; }
+        .detail-card { padding: 1.5rem 0; }
+        .detail-card + .detail-card { padding-top: 0.5rem; }
+        .about, .media, .resources, .contact { padding-block: 4rem; }
+        .tapestry-band { min-height: 180px; }
+        .media-grid { gap: 2rem; }
+        .media-card { border: 0; }
+        .media-card figcaption { padding-inline: 0; }
+        .resource-link { padding: 1.25rem; }
+        .resource-arrow { font-size: 1.25rem; }
+      }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <div class="hero-inner">
+          <p class="eyebrow">One night in Guernsey · A story centuries in the making</p>
+          <h1>The Bayeux Tapestry <span>Musical</span></h1>
+          <p class="hero-copy">The epic of 1066, retold through soaring music, vivid storytelling and the power of live theatre.</p>
+          <a class="button" href="#media">Watch &amp; listen</a>
+        </div>
+      </header>
+
+      <section class="details-wrap" aria-label="Event details">
+        <div class="details">
+          <article class="detail-card">
+            <span class="detail-number">I</span>
+            <h2>Date</h2>
+            <p><strong>Saturday, 14 November 2026</strong>Doors 7:00 PM · Curtain 7:30 PM</p>
+          </article>
+          <article class="detail-card">
+            <span class="detail-number">II</span>
+            <h2>Venue</h2>
+            <p><strong>Beau Séjour Theatre</strong>St Peter Port, Guernsey</p>
+          </article>
+          <article class="detail-card">
+            <span class="detail-number">III</span>
+            <h2>Admission</h2>
+            <p><strong>Free entry</strong>Advance reservation required</p>
+          </article>
+        </div>
+      </section>
+
+      <div class="tapestry-band" role="img" aria-label="Medieval embroidered scene inspired by the Bayeux Tapestry"></div>
+
+      <section class="about" aria-labelledby="about-title">
+        <div class="about-inner">
+          <div>
+            <p class="section-kicker">The story unfolds</p>
+            <h2 id="about-title">About the Show</h2>
+          </div>
+          <div class="about-copy">
+            <p class="dropcap">Experience the epic story of the 1066 Norman Conquest as you have never seen—or heard—it before. <strong>The Bayeux Tapestry Musical</strong> weaves dramatic live music, historical storytelling and theatrical performance into the legendary scenes embroidered across the famous tapestry.</p>
+            <p>Join us in Guernsey for an unforgettable evening celebrating our island&apos;s remarkable medieval connection to Normandy and British history.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="media" id="media" aria-labelledby="media-title">
+        <div class="media-header">
+          <p class="section-kicker">Hear the story</p>
+          <h2 id="media-title">Watch &amp; Listen</h2>
+          <p>Discover music and performance from The Bayeux Tapestry Musical.</p>
+        </div>
+        <div class="media-grid">
+          <figure class="media-card">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/F8OPQ_28mdo"
+                title="The Bayeux Tapestry Musical — featured recording one"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <figcaption>The Bayeux Tapestry Musical — Featured Recording I</figcaption>
+          </figure>
+          <figure class="media-card">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/VCeydlr3Nww"
+                title="The Bayeux Tapestry Musical — featured recording two"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <figcaption>The Bayeux Tapestry Musical — Featured Recording II</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="resources" aria-labelledby="resources-title">
+        <div class="resources-inner">
+          <p class="section-kicker">Explore the history</p>
+          <h2 id="resources-title">Discover the Tapestry</h2>
+          <div class="resource-list">
+            <a class="resource-link" href="https://www.bayeuxmuseum.com/en/the-bayeux-tapestry/discover-the-bayeux-tapestry/what-is-the-bayeux-tapestry-about/" target="_blank" rel="noopener noreferrer">
+              <span>
+                <span class="resource-source">Bayeux Museum</span>
+                <span class="resource-title">What is the Bayeux Tapestry about?</span>
+              </span>
+              <span class="resource-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="resource-link" href="https://www.britishmuseum.org/blog/everything-you-need-know-about-bayeux-tapestry" target="_blank" rel="noopener noreferrer">
+              <span>
+                <span class="resource-source">British Museum</span>
+                <span class="resource-title">Everything you need to know about the Bayeux Tapestry</span>
+              </span>
+              <span class="resource-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" aria-labelledby="contact-title">
+        <div class="contact-inner">
+          <p class="section-kicker">Questions &amp; enquiries</p>
+          <h2 id="contact-title">Contact Us</h2>
+          <p class="contact-copy">We&apos;d love to hear from you about the production.</p>
+          <a class="email-link" href="mailto:testemail@gmail.com">testemail@gmail.com</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Guernsey Bayeux Tapestry Musical Committee</p>
+    </footer>
+  </body>
+</html>
+
